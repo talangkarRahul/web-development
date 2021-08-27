@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+{% if error_message %} <p>{{ error_message }}</p>{% endif %}
+<form method="post" action="/login/">
+    {% csrf_token %}
+    {{ login }}
+    <input type="submit" value="Login">
+</form>
+
+</body>
+</html>
