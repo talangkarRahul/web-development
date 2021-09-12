@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+{% if error %}<div>{{ error }}</div>{% endif %}
+{% if message %} <div>{{ message }}</div>{% endif %}
+<form action="{% url 'profile' %}" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Update Profile">
+</form>
+
+
+<a href="{% url 'logout' %}">Logout</a>
+</body>
+</html>
